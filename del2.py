@@ -18,13 +18,12 @@ def read_files(file_path, word):
                     print("Path:", os.path.abspath(item))
                 file.close()
             else:
-                print("Error, file couldn,t be oppened. Path: ",
-                      os.path.join(file_path, item))
+                print("Error, file couldn,t be oppened. Path: ",os.path.abspath(file_path))
 
     for item in os.listdir():
         if (os.path.isdir(item)):  # if item is a directory
             newCwd = os.path.join(file_path, item)   # save a new path with the directory name
-            read_files(newCwd, word)  # call the function with the new path
+            read_files(newCwd, word)  # call the function with the new path (recursion)
 
 
 
